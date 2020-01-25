@@ -16,15 +16,16 @@
             constructor(){
                 this.canvas=document.getElementById("game");
                 this.context=this.canvas.getContext("2d");
-                document.addEventListener("keydown",this.onKeyPress(this));
+                document.addEventListener("keydown",this.onKeyPress.bind(this));
             }
             init(){
                 this.positionX=this.positionY=10;
-                this.appleX=this.appleY=10;
+                this.appleX=this.appleY=0;
                 this.tailSize=5;
                 this.trail=[];
                 this.gridSize=this.tileCount=20;
-                this.velocityX=this.velocityY=0;
+                this.velocityX=0;
+                this.velocityY=1;
                 this.timer=setInterval(this.loop.bind(this),1000/15);
             }
             reset(){
@@ -37,13 +38,13 @@
                 
             }
             update(){
-                this.positionX==this.velocityX;
-                this.positionY==this.velocityY;
+                this.positionX+=this.velocityX;
+                this.positionY+=this.velocityY;
                 if(this.positionX<0){
                     this.positionX=this.tileCount-1;
                 }
                 if(this.positionY<0){
-                    this.positionX=this.title-1;
+                    this.positionX=this.tileCount-1;
                 }
                 if(this.positionX>this.tileCount-1){
                     this.positionX=0;
@@ -51,8 +52,19 @@
                 if(this.positionY>this.tileCount-1){
                     this.positionY=0;
                 }
-
-
+                this.trail.forEach(t=>{
+                    if(this.positionX===t.positionX && this.positionY===t.positionY){
+                        this.reset();
+                    }
+                } );
+                this.trail.push({positionX:this.positionX,positionY:this.positionY});
+                while(this.trail.length > this.tailSize){
+                    this.trail.shift();
+                }
+                if(this.appleX===this.positionX && this.appleY ===this.positionY){
+                    this.appleX=Math.floor(Math.random()*this.tileCount);
+                    this.appleY=Math.floor(Math.random()*this.tileCount);
+                }
             }
             draw(){
                 this.context.fillStyle="black";
@@ -61,8 +73,6 @@
                 this.context.fillStyle="white";
                 this.context.font="20px Arial";
                 this.context.fillText(this.tailSize,20,40);
-                
-               
 
                 this.context.fillStyle="yellow";
                 this.trail.forEach(t => {
@@ -75,12 +85,13 @@
                 
             }
             onKeyPress(e){
+                console.log("ajsndkja");
                 if(e.keyCode===37 && this.velocityX !== 1){
                    this.velocityX=-1;
                    this.velocityY=0;
                 }
                 if(e.keyCode===39 && this.velocityX !== -1){
-                   this.velocityX=-1;
+                   this.velocityX=1;
                    this.velocityY=0;
                 }
                 if(e.keyCode===38 && this.velocityY !== 1){
