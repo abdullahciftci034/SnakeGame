@@ -21,11 +21,11 @@
             init(){
                 this.positionX=this.positionY=10;
                 this.appleX=this.appleY=0;
-                this.tailSize=5;
+                this.tailSize=1;
                 this.trail=[];
                 this.gridSize=this.tileCount=20;
-                this.velocityX=0;
-                this.velocityY=1;
+                this.velocityX=1;
+                this.velocityY=0;
                 this.timer=setInterval(this.loop.bind(this),1000/15);
             }
             reset(){
@@ -64,6 +64,7 @@
                 if(this.appleX===this.positionX && this.appleY ===this.positionY){
                     this.appleX=Math.floor(Math.random()*this.tileCount);
                     this.appleY=Math.floor(Math.random()*this.tileCount);
+                    this.tailSize++;
                 }
             }
             draw(){
