@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="game" width="400px" height="400px">
+
+
+    </canvas>
+    <script type="text/javascript">
+        class SnakeGame{
+            constructor(){
+                this.canvas=document.getElementById("game");
+                this.context=this.canvas.getContext("2d");
+                document.addEventListener("keydown",this.onKeyPress(this));
+
+            }
+            init(){
+                this.positionX=this.positionY=10;
+                this.appleX=this.appleY=5;
+                this.tailSize=5;
+                this.trial=[];
+                this.gridSize=this.tileCount=0;
+                this.timer=setInterval(this.loop.bing(this),1000/5);1
+            }
+            reset(){
+                clearInterval(this.timer);
+            }
+            loop(){
+                this.draw();
+                this.update();
+            }
+            update(){
+
+            }
+            draw(){
+
+            }
+
+            onKeyPress(e){
+
+            }
+        }
+    
+    </script>
+</body>
+</html>
