@@ -23,12 +23,13 @@
                 this.positionX=this.positionY=10;
                 this.appleX=this.appleY=5;
                 this.tailSize=5;
-                this.trial=[];
+                this.trail=[];
                 this.gridSize=this.tileCount=0;
                 this.timer=setInterval(this.loop.bing(this),1000/5);1
             }
             reset(){
                 clearInterval(this.timer);
+                this.init();
             }
             loop(){
                 this.draw();
@@ -38,9 +39,18 @@
 
             }
             draw(){
+                this.context.fillStyle="black";
+                this.context.fillRect(0,0,this.canvas.width,this.canvas.height);
 
+                this.context.fillStyle="white";
+                this.context.font="20px-Arial";
+                this.context.fillRect(this.tailSize,20,20);
+
+                this.context.filltext(this.tailSize,20,20);
+                this.trail.forEach(element => {
+                    
+                });
             }
-
             onKeyPress(e){
 
             }
