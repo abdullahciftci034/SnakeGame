@@ -44,7 +44,7 @@
                     this.positionX=this.tileCount-1;
                 }
                 if(this.positionY<0){
-                    this.positionX=this.tileCount-1;
+                    this.positionY=this.tileCount-1;
                 }
                 if(this.positionX>this.tileCount-1){
                     this.positionX=0;
@@ -62,9 +62,21 @@
                     this.trail.shift();
                 }
                 if(this.appleX===this.positionX && this.appleY ===this.positionY){
-                    this.appleX=Math.floor(Math.random()*this.tileCount);
-                    this.appleY=Math.floor(Math.random()*this.tileCount);
-                    this.tailSize++;
+                    var devam=true;
+                    while(devam){
+                        var appleX=Math.floor(Math.random()*this.tileCount);
+                        var appleY=Math.floor(Math.random()*this.tileCount);
+                        this.trail.forEach(t=>{
+                            if(!(appleX===t.positionX && appleY===t.positionY)){
+                                this.appleX=appleX;
+                                this.appleY=appleY;
+                                devam=false
+                            }
+                        });
+                        
+                        this.tailSize++;
+                        
+                    }
                 }
             }
             draw(){
