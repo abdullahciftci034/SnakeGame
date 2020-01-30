@@ -63,16 +63,25 @@
                 }
                 if(this.appleX===this.positionX && this.appleY ===this.positionY){
                     var devam=true;
+					var eklemi=false;
+					var appleX;
+					var appleY;
                     while(devam){
-                        var appleX=Math.floor(Math.random()*this.tileCount);
-                        var appleY=Math.floor(Math.random()*this.tileCount);
+                        appleX=Math.floor(Math.random()*this.tileCount);
+                        appleY=Math.floor(Math.random()*this.tileCount);
                         this.trail.forEach(t=>{
                             if(!(appleX===t.positionX && appleY===t.positionY)){
-                                this.appleX=appleX;
+                                eklemi=true;
+                                
+                            }else{
+								eklemi=false;
+							}
+                        });  
+						if(eklemi){
+								this.appleX=appleX;
                                 this.appleY=appleY;
-                                devam=false;
-                            }
-                        });                        
+								devam=false;
+						}
                     }
                     this.tailSize++;
                 }
