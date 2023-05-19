@@ -13,9 +13,9 @@
 			Oyunu Çalıştırmak için önce  javayı yükleyin.<br>
 			Sonra terminalden:<br>
 			
-			<pre class="notranslate"><code>cd ./java-code </code></pre><br>
-			<pre class="notranslate"><code>javac snakeGame.java </code></pre><br>
-			<pre class="notranslate"><code>java snakeGame</code></pre><br>
+			<code>cd ./java-code </code><br>
+			<code>javac snakeGame.java </code><br>
+			<code>java snakeGame</code><br>
 			sırası ile çalıştırın.
 		</span>
 	 </p>
