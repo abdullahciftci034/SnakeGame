@@ -12,9 +12,10 @@
 		<span>
 			Oyunu Çalıştırmak için önce  javayı yükleyin.<br>
 			Sonra terminalden:<br>
-			<b>cd ./java-code </b><br> 
-			<b>javac snakeGame.java</b><br>
-			<b>java snakeGame</b><br>
+			
+			<pre class="notranslate"><code>cd ./java-code </code></pre><br>
+			<pre class="notranslate"><code>javac snakeGame.java </code></pre><br>
+			<pre class="notranslate"><code>java snakeGame</code></pre><br>
 			sırası ile çalıştırın.
 		</span>
 	 </p>
