@@ -11,11 +11,11 @@
 		Oyun mantığını Selman Kahyan'ın  Youtube videosundan aldım.
 		<span>
 			Oyunu Çalıştırmak için önce  javayı yükleyin.<br>
-			Sonra terminalden:<br>
+			Sonra terminalden:<br/>
 			
-			<code>cd ./java-code </code><br>
-			<code>javac snakeGame.java </code><br>
-			<code>java snakeGame</code><br>
+			<code>cd ./java-code </code><br/>
+			<code>javac snakeGame.java </code><br/>
+			<code>java snakeGame</code><br/>
 			sırası ile çalıştırın.
 		</span>
 	 </p>
