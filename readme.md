@@ -12,9 +12,17 @@
 		Oyun mantığını Selman Kahyan'ın  Youtube videosundan aldım.
 		Oyunu Çalıştırmak için önce  javayı yükleyin.<br>
 		Sonra terminalden:
-		<code>cd ./java-code</code> 
-		<code>javac snakeGame.java</code>
-		<code>java snakeGame</code>
+		<ul>
+			<li>
+				<code>cd ./java-code</code> 
+			</li>
+			<li>
+				<code>javac snakeGame.java</code>
+			</li>
+			<li>	
+				<code>java snakeGame</code>
+			</li>
+		</ul>
 		sırası ile çalıştırın.	
 	</p>
 </div>
