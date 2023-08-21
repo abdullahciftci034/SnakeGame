@@ -26,3 +26,6 @@
 		sırası ile çalıştırın.	
 	</p>
 </div>
+### Preview
+<img src="images/javascript.png">
+<img src="images/java.png">
