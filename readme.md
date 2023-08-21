@@ -1,4 +1,4 @@
-<h1>Burda java Kodumuz vardır</h1>
+<h1>Yılan Oyunu</h1>
 <div>
 	<h2>Java kodu için</h2>
 	<p>
